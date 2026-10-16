@@ -1,1 +1,92 @@
+class Vehicle {
+    String brand = "Toyota";
 
+    void start() {
+        System.out.println("Vehicle is starting");
+    }
+}
+
+class Car extends Vehicle {
+    String model = "Fortuner";
+
+    void displayCar() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Model: " + model);
+    }
+}
+
+class Person {
+    String name = "Rahul";
+
+    void displayPerson() {
+        System.out.println("Name: " + name);
+    }
+}
+
+class Employee extends Person {
+    int employeeId = 101;
+
+    void displayEmployee() {
+        System.out.println("Employee ID: " + employeeId);
+    }
+}
+
+class Manager extends Employee {
+    String department = "IT";
+
+    void displayManager() {
+        System.out.println("Department: " + department);
+    }
+}
+
+class Shape {
+    void displayShape() {
+        System.out.println("This is a shape");
+    }
+}
+
+class Circle extends Shape {
+    double radius = 5;
+
+    void calculateArea() {
+        System.out.println("Circle Area: " + (3.14 * radius * radius));
+    }
+}
+
+class Rectangle extends Shape {
+    int length = 10;
+    int breadth = 5;
+
+    void calculateArea() {
+        System.out.println("Rectangle Area: " + (length * breadth));
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Single Inheritance");
+        Car c = new Car();
+        c.start();
+        c.displayCar();
+
+        System.out.println("\nMultilevel Inheritance");
+        Manager m = new Manager();
+        m.displayPerson();
+        m.displayEmployee();
+        m.displayManager();
+
+        System.out.println("\nHierarchical Inheritance");
+        Circle ci = new Circle();
+        ci.displayShape();
+        ci.calculateArea();
+
+        Rectangle r = new Rectangle();
+        r.displayShape();
+        r.calculateArea();
+
+        System.out.println("\nOutput");
+        System.out.println("Single Inheritance: Vehicle -> Car");
+        System.out.println("Multilevel Inheritance: Person -> Employee -> Manager");
+        System.out.println("Hierarchical Inheritance: Shape -> Circle, Rectangle");
+    }
+}
