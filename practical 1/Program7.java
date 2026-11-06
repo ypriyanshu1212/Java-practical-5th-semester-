@@ -1,34 +1,28 @@
+class Demo {
+
     Demo() {
-        System.out.println("Object is created.");
+        System.out.println("Object created");
     }
 
-    void display() {
-        System.out.println("Object is being used.");
-    }
-
-    // Cleanup reference exercise
     @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Garbage collector called finalize().");
-        super.finalize();
+    protected void finalize() {
+        System.out.println("Garbage collection performed");
     }
+}
 
+public class Main {
     public static void main(String[] args) {
 
-        Demo obj = new Demo();
+        Demo obj1 = new Demo();
+        Demo obj2 = new Demo();
 
-        obj.display();
+        obj1 = null;
+        obj2 = null;
 
-        // Remove reachable reference
-        obj = null;
+        System.out.println("Objects are no longer referenced.");
 
-        System.out.println("Object reference removed.");
-
-        // Request garbage collection
         System.gc();
 
-        System.out.println("Garbage collection requested.");
-
-        // Program continues without depending on cleanup timing
+        System.out.println("Main method completed.");
     }
 }
