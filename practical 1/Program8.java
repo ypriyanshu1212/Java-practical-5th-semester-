@@ -3,28 +3,28 @@ class Product {
     double price;
     int quantity;
 
-    // No-argument constructor
+    // 1. Default constructor
     Product() {
-        this.productName = "Unknown";
-        this.price = 0.0;
-        this.quantity = 0;
+        productName = "Unknown";
+        price = 0.0;
+        quantity = 0;
     }
 
-    // Constructor with product name
+    // 2. Constructor with product name
     Product(String productName) {
         this.productName = productName;
-        this.price = 0.0;
-        this.quantity = 0;
+        price = 0.0;
+        quantity = 0;
     }
 
-    // Constructor with product name and price
+    // 3. Constructor with name and price
     Product(String productName, double price) {
         this.productName = productName;
         this.price = price;
-        this.quantity = 1;
+        quantity = 1;
     }
 
-    // Constructor with all three fields
+    // 4. Constructor with all three fields
     Product(String productName, double price, int quantity) {
         this.productName = productName;
         this.price = price;
@@ -39,34 +39,37 @@ class Product {
     // Display product details
     void display() {
         System.out.println("Product Name: " + productName);
-        System.out.println("Price: Rs. " + price);
+        System.out.println("Price: " + price);
         System.out.println("Quantity: " + quantity);
-        System.out.println("Total Cost: Rs. " + calculateTotalCost());
-        System.out.println("---------------------------");
-    }
-
-    public static void main(String[] args) {
-
-        Product p1 = new Product();
-        Product p2 = new Product("Laptop");
-        Product p3 = new Product("Mouse", 500.0);
-        Product p4 = new Product("Keyboard", 1200.0, 2);
-
-        System.out.println("Product 1 - No Arguments:");
-        p1.display();
-
-        System.out.println("Product 2 - Name Only:");
-        p2.display();
-
-        System.out.println("Product 3 - Name and Price:");
-        p3.display();
-
-        System.out.println("Product 4 - All Arguments:");
-        p4.display();
+        System.out.println("Total Cost: " + calculateTotalCost());
+        System.out.println("-------------------------");
     }
 }
 
-    Product(String productName, double price, int quantity) {
-        this.productName = productName;
-        this.price = price;
-       
+public class Main {
+    public static void main(String[] args) {
+
+        Product p1 = new Product();
+
+        Product p2 = new Product("Laptop");
+
+        Product p3 = new Product("Mouse", 500);
+
+        Product p4 = new Product("Keyboard", 1000, 2);
+
+        System.out.println("CONSTRUCTOR OVERLOADING DEMO");
+        System.out.println("============================");
+
+        System.out.println("\n1. Default Constructor");
+        p1.display();
+
+        System.out.println("\n2. Name Constructor");
+        p2.display();
+
+        System.out.println("\n3. Name and Price Constructor");
+        p3.display();
+
+        System.out.println("\n4. All Parameters Constructor");
+        p4.display();
+    }
+}
